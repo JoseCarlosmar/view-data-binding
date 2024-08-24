@@ -23,15 +23,12 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
 
         binding.lifecycleOwner = this
-
-        binding.showMyName = showName
-
         binding.viewModel = viewModel
 
         binding.myButton.setOnClickListener {
             viewModel.setMyName("Carlos")
+            viewModel.setGreeting("Hola a todos!!")
         }
-
         setContentView(binding.root)
     }
 }
